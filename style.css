@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background-color: hsl(233, 47%, 7%);
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.container{
+    display: flex;
+    width: 75%;
+    background-color: hsl(244, 38%, 16%);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin: 5rem 0;
+}
+.right{
+    width: 50%;
+    background-image: linear-gradient(to right, hsla(277, 74%, 43%, 0.6), hsla(277, 74%, 43%, 0.6)), url('images/image-header-desktop.jpg');
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    z-index: 0;
+    animation-name: scale;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    transform: scale(1.2);
+}
+@keyframes scale{
+    100%{
+        transform: scale(1);
+    }
+}
+
+.left{
+    width: 50%;
+    padding: 4rem;
+    z-index: 1;
+    background-color:hsl(244, 38%, 16%);
+}
+.left h1{
+    color: white;
+    font-family: 'Inter',sans-serif;
+    margin-bottom: 2rem;
+}
+.left h1 span{
+    color: hsl(277, 64%, 61%);
+}
+.left>p{
+    color: hsla(0, 0%, 100%, 0.75);
+    font-family: 'Lexend Deca',sans-serif;
+    font-size: 15px;
+    line-height: 1.5em;
+}
+.left .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7rem;
+    text-transform: uppercase;
+}
+.state{
+    margin-right: 1rem;
+}
+.flex .state strong{
+    font-family: 'Inter',sans-serif;
+    color: #fff;
+    font-size: 1.5em;
+}
+.flex .state p{
+    font-family: 'Lexend Deca',sans-serif;
+    font-size: 15px;
+    color: hsla(0, 0%, 100%, 0.6);
+}
+/* ---------- MEDIA QUERIES ---------------- */
+@media only screen and (max-width: 1024px){
+    .container{
+        width: 90%;
+    }
+}
+@media only screen and (max-width: 800px){
+    .left,
+    .right{
+        width: 100%;
+    }
+    .left{
+        padding: 3rem 2rem;
+    }
+    .right{
+        background: linear-gradient(to right, hsla(277, 74%, 43%, 0.6), hsla(277, 74%, 43%, 0.6)) , url(images/image-header-mobile.jpg) ;
+        height: 20rem;
+        background-size: cover, cover;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
+    }
+    .container{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .flex{
+        flex-direction: column;
+        margin-top: 3rem !important;
+    }
+    .state{
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+}
